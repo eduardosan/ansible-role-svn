@@ -1,12 +1,5 @@
 <Location /svn>
    DAV svn
    SVNParentPath {{ svn_repository_home }}
-
-{% if apache_http_auth_file is defined %}
-   Require valid-user
-   AuthType Basic
-   AuthName "Please authenticate"
-   AuthUserFile {{ apache_http_auth_file }}
-{% endif %}
    Allow from All
 </Location>
