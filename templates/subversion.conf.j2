@@ -4,7 +4,7 @@
 {% if svn_enable_authz %}
    AuthzSVNReposRelativeAccessFile authz
 {% endif %}
-{% svn_auth_file is defined %}
+{% if svn_auth_file is defined %}
   # Authentication: Basic
   AuthName "Subversion repository"
   AuthType Basic
