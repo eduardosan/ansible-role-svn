@@ -1,5 +1,17 @@
 <Location /svn>
    DAV svn
    SVNParentPath {{ svn_repository_home }}
-   Allow from All
+{% if svn_enable_authz %}
+   AuthzSVNReposRelativeAccessFile authz
+{% endif %}
+{% svn_auth_file is defined %}
+  # Authentication: Basic
+  AuthName "Subversion repository"
+  AuthType Basic
+  AuthBasicProvider file
+  AuthUserFile {{ svn_auth_file }}
+
+  # Authorization: Authenticated users only
+  Require valid-user
+{% endif %}
 </Location>

@@ -1,3 +1,6 @@
 ---
 apache_mods_enabled:
   - dav_svn.load
+  - authz_svn.load
+  - authn_file.load
+  - auth_basic
