@@ -1,4 +1,4 @@
-<Location /svn>
+<Location {{ svn_location }}>
    DAV svn
    SVNParentPath {{ svn_repository_home }}
 {% if svn_enable_authz %}
