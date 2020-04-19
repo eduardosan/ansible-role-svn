@@ -13,7 +13,7 @@
   apt: "name={{ item }} state=present"
   with_items:
     - subversion
-    - libapache2-svn
+    - libapache2-mod-svn
   when: ansible_os_family == 'Debian'
 
 - name: Ensure svn home folder exists.
